@@ -11,7 +11,8 @@ const server = http.createServer(app);
 const port = 8080;
 const cors = require('cors');
 const socketIO = require('socket.io');
-const RacingData = proto.lookupType('RacingData');
+const RacingData = proto.lookupType('RacecarData');
+const os = require('os');
 let latestData;
 
 app.use(cors())
@@ -49,6 +50,19 @@ server.listen(port, () => {
 const udpServer = dgram.createSocket('udp4');
 const UDP_PORT = 9876; 
 
+const networkInterfaces = os.networkInterfaces();
+let localIPAddress;
+
+Object.keys(networkInterfaces).forEach(interfaceName => {
+    const interfaceList = networkInterfaces[interfaceName];
+    interfaceList.forEach(interfaceInfo => {
+        if (interfaceInfo.family === 'IPv4') {
+            localIPAddress = interfaceInfo.address;
+            return;
+        }
+    });
+});
+
 udpServer.on('error', (err) => {
   console.log(`UDP server error:\n${err.stack}`);
   udpServer.close();
@@ -62,7 +76,7 @@ udpServer.on('message', (msg) => {
     enums: String,
     bytes: String,
   });
-  console.log(`Received data: ${latestData}`);
+  console.log(`Received data: ${latestData.gear}`);
   io.emit('udpData', latestData);
 });
 
@@ -71,4 +85,7 @@ udpServer.on('listening', () => {
   console.log(`UDP server listening on ${address.address}:${address.port}`);
 });
 
-udpServer.bind(UDP_PORT);
+udpServer.bind({
+  port:UDP_PORT,
+  address:localIPAddress
+});

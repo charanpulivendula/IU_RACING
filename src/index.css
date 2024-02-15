@@ -5,14 +5,14 @@
        /* fonts */
 @font-face {
   font-family: "archivo";
-  src: url(C:\Users\chara\Letscode\PyStack\VAIL\iu_racing\fonts\Archivo.ttf);
+  src: url(/fonts/Archivo.ttf);
   font-weight: normal;
   font-size: normal;
 }
 
 @font-face {
   font-family: "michroma";
-  src: url(C:\Users\chara\Letscode\PyStack\VAIL\iu_racing\fonts\Michroma.ttf);
+  src: url(/fonts/Michroma.ttf);
   font-weight: normal;
   font-size: normal;
 }
