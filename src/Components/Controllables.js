@@ -2,6 +2,12 @@ import progress_circle from '../Assets/progress_circle.svg';
 import Temperature from "./Temperature";
 import Speedometer from "./Speedometer";
 import States from './States';
+import ChangingProgressProvider from './ChangingProgressProvider';
+import {
+    CircularProgressbar,
+    buildStyles,
+  } from "react-circular-progressbar";
+  import "react-circular-progressbar/dist/styles.css";
 
 const Contollables = ()=>{
     return (
@@ -20,11 +26,30 @@ const Contollables = ()=>{
                     alt="Ellipse"
                     src="https://c.animaapp.com/IFYG8yp8/img/ellipse-191-1.svg"
                     />
-                    <img
+                    <ChangingProgressProvider values={[0, 20, 40 , 70, 80, 100]}>
+                                        {(value) => (
+                                        <CircularProgressbar
+                                            value={value}
+                                            circleRatio={0.94}
+                                            styles={buildStyles({
+                                            rotation: 43 / 100 + 1 / 8,
+                                            strokeLinecap: "butt",
+                                            trailColor: "#000",
+                                            pathColor: "#cf1616",
+                                            })}
+                                        />
+                                        )}
+                                    </ChangingProgressProvider>
+                                    {/* <img
+                                    className="absolute w-[692px] h-[692px] top-[44px] left-[48px]"
+                                    alt="Ellipse"
+                                    src={progress_circle}
+                                    /> */}
+                    {/* <img
                     className="absolute w-[155px] h-[270px] top-0 left-0"
                     alt="Ellipse"
                     src="https://c.animaapp.com/IFYG8yp8/img/ellipse-192-1.svg"
-                    />
+                    /> */}
                 </div>
             </div>
             <div className="absolute w-[274px] h-[270px] top-[1046px] left-[2684px]">
@@ -37,11 +62,25 @@ const Contollables = ()=>{
                     </div>
                     <div className="absolute w-[270px] h-[270px] top-0 left-0">
                     <div className="relative w-[223px] h-[237px] top-[33px] left-[21px]">
-                        <img
+                        {/* <img
                         className="w-[114px] h-[81px] top-[157px] absolute left-0"
                         alt="Ellipse"
                         src="https://c.animaapp.com/IFYG8yp8/img/ellipse-192-2.svg"
-                        />
+                        /> */}
+                        <ChangingProgressProvider values={[0, 20, 40 , 70, 80, 100]}>
+                                        {(value) => (
+                                        <CircularProgressbar
+                                            value={value}
+                                            circleRatio={0.94}
+                                            styles={buildStyles({
+                                            rotation: 43 / 100 + 1 / 8,
+                                            strokeLinecap: "butt",
+                                            trailColor: "#000",
+                                            pathColor: "#cf1616",
+                                            })}
+                                        />
+                                        )}
+                                    </ChangingProgressProvider>
                         <img
                         className="absolute w-[212px] h-[208px] top-0 left-[12px]"
                         alt="Ellipse"
@@ -61,11 +100,25 @@ const Contollables = ()=>{
                     </div>
                     <div className="absolute w-[263px] h-[263px] top-0 left-0">
                         <div className="relative w-[238px] h-[263px]">
-                            <img
+                            {/* <img
                             className="absolute w-[177px] h-[263px] top-0 left-0"
                             alt="Ellipse"
                             src="https://c.animaapp.com/IFYG8yp8/img/ellipse-193-1.svg"
-                            />
+                            /> */}
+                            <ChangingProgressProvider values={[0, 20, 40 , 70, 80, 100]}>
+                                        {(value) => (
+                                        <CircularProgressbar
+                                            value={value}
+                                            circleRatio={0.94}
+                                            styles={buildStyles({
+                                            rotation: 43 / 100 + 1 / 8,
+                                            strokeLinecap: "butt",
+                                            trailColor: "#000",
+                                            pathColor: "#cf1616",
+                                            })}
+                                        />
+                                        )}
+                                    </ChangingProgressProvider>
                             <img
                             className="absolute w-[211px] h-[211px] top-[26px] left-[27px]"
                             alt="Ellipse"
@@ -85,11 +138,25 @@ const Contollables = ()=>{
                     </div>
                     <div className="absolute w-[270px] h-[270px] top-0 left-0">
                         <div className="relative w-[244px] h-[237px] top-[33px]">
-                            <img
+                            {/* <img
                             className="w-[135px] h-[147px] top-[90px] absolute left-0"
                             alt="Ellipse"
                             src="https://c.animaapp.com/IFYG8yp8/img/ellipse-192-3.svg"
-                            />
+                            /> */}
+                            <ChangingProgressProvider values={[0, 20, 40 , 70, 80, 100]}>
+                                        {(value) => (
+                                        <CircularProgressbar
+                                            value={value}
+                                            circleRatio={0.94}
+                                            styles={buildStyles({
+                                            rotation: 43 / 100 + 1 / 8,
+                                            strokeLinecap: "butt",
+                                            trailColor: "#000",
+                                            pathColor: "#cf1616",
+                                            })}
+                                        />
+                                        )}
+                                    </ChangingProgressProvider>
                             <img
                             className="absolute w-[212px] h-[208px] top-0 left-[33px]"
                             alt="Ellipse"
